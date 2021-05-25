@@ -8,6 +8,3 @@ ttt
 qqq
 
 
-fdsfsdf
-asdasdas
-
