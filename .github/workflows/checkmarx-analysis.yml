@@ -39,7 +39,7 @@ jobs:
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         incremental: false
         break_build: false
-        force-scan: false
+        forceScan: false
         scanners: sast
         bug_tracker: Sarif
         params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --http-read-timeout=600000 --cx-flow.comment-script=CxComment.groovy  --cx-flow.filterSeverity --cx-flow.filterCategory --cx-flow.zip-exclude=vendor\/.* ,.+\/vendor\/.* #,\.git/.*
