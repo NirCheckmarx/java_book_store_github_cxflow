@@ -1,0 +1,11 @@
+{
+    "cx.server": {
+        "url": "https://apac-ts.cx.au/",
+        "alias": "apac-ts",
+        "username": "admin",
+        "password": "q+cOeMfemnEsf0neucA2bDPsu02LNRpz1xA=",
+        "project_id": 10021,
+        "team_id": 3,
+        "project_name": "java_book_store_github"
+    }
+}
