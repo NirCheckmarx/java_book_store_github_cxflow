@@ -40,12 +40,12 @@ jobs:
         incremental: false
         break_build: false
         #preset: Checkmarx Default
-        scan-resubmit: true
+        #scan-resubmit: true
         scan-queuing: true
         scan-queuing-timeout: 720
         scanners: sast
         bug_tracker: Sarif
-        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --http-read-timeout=600000 --cx-flow.comment-script=CxComment.groovy  --cx-flow.filterSeverity --cx-flow.filterCategory --cx-flow.zip-exclude=vendor\/.*,.+\/vendor\/.*
+        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --http-read-timeout=600000 --cx-flow.comment-script=CxComment.groovy  --cx-flow.filterSeverity --cx-flow.filterCategory --cx-flow.zip-exclude=vendor\/.*,.+\/vendor\/.* --checkmarx.scan-resubmit=true
     # Upload the Report for CodeQL/Security Alerts#
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
