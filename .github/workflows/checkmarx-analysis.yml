@@ -5,7 +5,7 @@ name: CxFlow
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master,test-branching ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
@@ -46,7 +46,7 @@ jobs:
         scanners: sast
         bug_tracker: Sarif
         #params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --http-read-timeout=600000 --cx-flow.comment-script=CxComment.groovy  --cx-flow.filterSeverity --cx-flow.filterCategory --cx-flow.zip-exclude=\.git/.*,\.github/.*,vendor/.*,.+\/vendor/.* --checkmarx.scan-resubmit=true --checkmarx.scan-queuing=true
-        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --http-read-timeout=600000 --cx-flow.comment-script=CxComment.groovy  --cx-flow.filterSeverity --cx-flow.filterCategory --checkmarx.scan-resubmit=true --checkmarx.scan-queuing=true --logging.level.org.apache.http.client.protocol=DEBUG
+        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --http-read-timeout=600000 --cx-flow.comment-script=CxComment.groovy  --cx-flow.filterSeverity --cx-flow.filterCategory --checkmarx.scan-resubmit=true --checkmarx.scan-queuing=true --logging.level.org.apache.http.client.protocol=DEBUG --checkmarx.cx-branch=true --cx-project=GitHub-java_book_store_github_cxflow-main --default-branch=main
     # Upload the Report for CodeQL/Security Alerts#
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
